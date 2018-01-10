@@ -1,0 +1,27 @@
+{
+  "name": "simpleshare",
+  "version": "0.0.1",
+  "description": "Module for simple sharing in social network.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wkornilow/SimpleShare.git"
+  },
+  "keywords": [
+    "sharing",
+    "share",
+    "social",
+    "network",
+    "social",
+    "network"
+  ],
+  "author": "wkornilow",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/wkornilow/SimpleShare/issues"
+  },
+  "homepage": "https://github.com/wkornilow/SimpleShare#readme"
+}
