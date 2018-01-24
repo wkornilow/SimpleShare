@@ -30,7 +30,7 @@ class SimpleShare {
     }
 
     setPosition(event) {
-        let coords = {}
+        let coords = {};
 
         //Calculating window position
         let dualScreenLeft = window.screenLeft !== undefined ? window.screenLeft : screen.left;
@@ -52,7 +52,7 @@ class SimpleShare {
         return coords;
     }
 
-    getData(event) {
+    getData() {
         let data = {};
 
         data.href   = location.href;
@@ -71,10 +71,6 @@ class SimpleShare {
         let coords      = self.setPosition(event);
         let data        = self.getData(event);
 
-        console.log(size);
-        console.log(coords);
-        console.log(data);
-
         links.fb = `//facebook.com/sharer.php?u=${data.href}`;
         links.pt = `//pinterest.com/pin/create/button/?url=${data.href}&media=${data.media}&description=${data.desc}`;
         links.tw = `//twitter.com/intent/tweet?url=${data.href}&text=${data.title}`;
@@ -84,8 +80,6 @@ class SimpleShare {
         links.target = `_blank`;
 
         links.size = `width=${size.width},height=${size.height}, top=${coords.top},left=${coords.left}`;
-
-        console.log(links);
 
         return links;
     }
@@ -132,6 +126,8 @@ class SimpleShare {
         }
     }
 }
+
+export {SimpleShare};
 
 ready(function () {
     new SimpleShare().init();
