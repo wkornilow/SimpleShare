@@ -1,7 +1,5 @@
 'use strict';
 
-import {ready} from 'helpers/helpers';
-
 class SimpleShare {
     init() {
         this.crauler()
@@ -129,6 +127,8 @@ class SimpleShare {
 
 export {SimpleShare};
 
-ready(function () {
+function ready() {
     new SimpleShare().init();
-});
+}
+
+document.addEventListener('DOMContentLoaded', ready);

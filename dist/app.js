@@ -79,9 +79,7 @@ return /******/ (function(modules) { // webpackBootstrap
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_helpers_helpers__ = __webpack_require__(1);
-
-
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SimpleShare", function() { return SimpleShare; });
 
 
 class SimpleShare {
@@ -134,7 +132,7 @@ class SimpleShare {
         return coords;
     }
 
-    getData(event) {
+    getData() {
         let data = {};
 
         data.href = location.href;
@@ -153,10 +151,6 @@ class SimpleShare {
         let coords = self.setPosition(event);
         let data = self.getData(event);
 
-        console.log(size);
-        console.log(coords);
-        console.log(data);
-
         links.fb = `//facebook.com/sharer.php?u=${data.href}`;
         links.pt = `//pinterest.com/pin/create/button/?url=${data.href}&media=${data.media}&description=${data.desc}`;
         links.tw = `//twitter.com/intent/tweet?url=${data.href}&text=${data.title}`;
@@ -166,8 +160,6 @@ class SimpleShare {
         links.target = `_blank`;
 
         links.size = `width=${size.width},height=${size.height}, top=${coords.top},left=${coords.left}`;
-
-        console.log(links);
 
         return links;
     }
@@ -215,33 +207,13 @@ class SimpleShare {
     }
 }
 
-Object(__WEBPACK_IMPORTED_MODULE_0_helpers_helpers__["a" /* ready */])(function () {
+
+
+function ready() {
     new SimpleShare().init();
-});
+}
 
-/***/ }),
-/* 1 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ready; });
-
-
-let ready = function (fn) {
-
-    // Sanity check
-    if (typeof fn !== 'function') return;
-
-    // If document is already loaded, run method
-    if (document.readyState === 'complete') {
-        return fn();
-    }
-
-    // Otherwise, wait until document is loaded
-    document.addEventListener('DOMContentLoaded', fn, false);
-};
-
-
+document.addEventListener('DOMContentLoaded', ready);
 
 /***/ })
 /******/ ]);
