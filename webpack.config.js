@@ -1,50 +1,74 @@
-/* global __dirname, require, module*/
-
 const webpack = require('webpack');
-const UglifyJsPlugin = webpack.optimize.UglifyJsPlugin;
 const path = require('path');
-const env = require('yargs').argv.env; // use --env with webpack 2
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 
-let libraryName = 'app';
-
-let plugins = [], outputFile;
-
-if (env === 'build') {
-    plugins.push(new UglifyJsPlugin({ minimize: true }));
-    outputFile = libraryName + '.min.js';
-} else {
-    outputFile = libraryName + '.js';
-}
+const extractSass = new ExtractTextPlugin({
+    filename: "style.css",
+});
 
 const config = {
-    entry: __dirname + '/src/app.js',
-    devtool: 'source-map',
+    entry: './src/app.js',
     output: {
-        path: __dirname + '/dist',
-        filename: outputFile,
-        library: libraryName,
-        libraryTarget: 'umd',
-        umdNamedDefine: true
+        path: path.resolve(__dirname, 'dest'),
+        filename: 'app.js'
     },
+
+    devtool: 'source-map',
+
     module: {
+        loaders: [
+            {
+                test: /\.js$/,
+                exclude: /node_modules/,
+                loader: 'babel-loader',
+                query: {
+                    presets: ['es2015']
+                }
+            },
+            {
+                test: /\.scss$/,
+                loaders: ["style-loader", "css-loader", "sass-loader"]
+            }
+        ],
         rules: [
             {
-                test: /(\.jsx|\.js)$/,
-                loader: 'babel-loader',
-                exclude: /(node_modules|bower_components)/
-            },
-            // {
-            //     test: /(\.jsx|\.js)$/,
-            //     loader: 'eslint-loader',
-            //     exclude: /node_modules/
-            // }
+                test: /\.scss$/,
+                use: ExtractTextPlugin.extract({
+                    fallback: "style-loader",
+                    use: "css-loader"
+                })
+            }
         ]
     },
-    resolve: {
-        modules: [path.resolve('./node_modules'), path.resolve('./src')],
-        extensions: ['.json', '.js']
+
+    devServer: {
+        contentBase: path.join(__dirname, "./"),
+        compress: true,
+        port: 3000,
+        hot: true,
+        overlay: true
+
     },
-    plugins: plugins
+
+    plugins: [
+        new ExtractTextPlugin("css/styles.css"),
+
+        new BrowserSyncPlugin(
+            {
+                // browse to http://localhost:3000/ during development,
+                // ./public directory is being served
+                host: 'localhost',
+                port: 3100,
+                proxy: 'localhost:3000',
+                open: 'external',
+                files: ['./index.html']
+            },
+            {
+                reload: true
+            }
+        )
+    ]
 };
 
 module.exports = config;
