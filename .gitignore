@@ -1,4 +1,6 @@
 .idea
+.htaccess
 package-lock.json
+npm-debug.log
 /node_modules/
 /dest/
