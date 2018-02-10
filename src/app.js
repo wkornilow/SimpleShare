@@ -52,8 +52,9 @@ class SimpleShare {
 
     getData() {
         let data = {};
+        let self = this;
 
-        data.url    = location.href;
+        data.url    = self.encode(location.href);
         data.title  = document.head.querySelector('meta[property="og:title"]').content;
         data.media  = document.head.querySelector('meta[property="og:image"]').content;
         data.desc   = document.head.querySelector('meta[property="og:description"]').content;
@@ -69,10 +70,10 @@ class SimpleShare {
         let coords      = self.setPosition(event);
         let data        = self.getData(event);
 
-        links.facebook      = `//facebook.com/sharer.php?u=${self.encode(data.url)}`;
-        links.pinterest     = `//pinterest.com/pin/create/button/?url=${data.url}&media=${data.media}&description=${data.desc}`;
+        links.facebook      = `//facebook.com/sharer.php?u=${data.url}`;
+        links.pinterest     = `//pinterest.com/pin/create/button/?url=${data.url}&media=${data.media}&description=${data.title}`;
         links.twitter       = `//twitter.com/intent/tweet?url=${data.url}&text=${data.title}`;
-        links.gplus         = `//plus.google.com/share?url=${data.title}`;
+        links.gplus         = `//plus.google.com/share?url=${data.url}`;
         links.tumblr        = `//tumblr.com/widgets/share/tool?canonicalUrl=${data.url}&title=${data.title}&caption=${data.desc}`;
         // links.linkedin      = `//linkedin.com/shareArticle?url=${data.url}&title=${data.title}`;
         // links.buffer        = `//buffer.com/add?text=${data.title}&url=${data.url}`;
