@@ -69,32 +69,32 @@ class SimpleShare {
         let coords      = self.setPosition(event);
         let data        = self.getData(event);
 
-        links.facebook      = `//facebook.com/sharer.php?u=${data.url}`;
+        links.facebook      = `//facebook.com/sharer.php?u=${self.encode(data.url)}`;
         links.pinterest     = `//pinterest.com/pin/create/button/?url=${data.url}&media=${data.media}&description=${data.desc}`;
         links.twitter       = `//twitter.com/intent/tweet?url=${data.url}&text=${data.title}`;
         links.gplus         = `//plus.google.com/share?url=${data.title}`;
         links.tumblr        = `//tumblr.com/widgets/share/tool?canonicalUrl=${data.url}&title=${data.title}&caption=${data.desc}`;
-        links.linkedin      = `//linkedin.com/shareArticle?url=${data.url}&title=${data.title}`;
-        links.buffer        = `//buffer.com/add?text=${data.title}&url=${data.url}`;
-        links.digg          = `//digg.com/submit?url=${data.url}&title=${data.title}`;
-        links.reddit        = `//reddit.com/submit?url=${data.url}&title=${data.title}`;
-        links.stamble       = `//www.stumbleupon.com/submit?url=${data.url}&title=${data.title}`;
-        links.delicious     = `//delicious.com/save?v=5&provider={provider}&noui&jump=close&url=${data.url}&title=${data.title}`;
-        links.blogger       = `//www.blogger.com/blog-this.g?u=${data.url}&n=${data.title}&t=${data.desc}`;
-        links.lj            = `//www.livejournal.com/update.bml?subject=${data.title}&event=${data.url}`;
-        links.myspace       = `//myspace.com/post?u=${data.url}&t=${data.title}&c=${data.desc}`;
-        links.yahoo         = `//compose.mail.yahoo.com/?body=${data.url}`;
-        links.ffeed         = `//friendfeed.com/?url=${data.url}`;
-        links.newsvine      = `//www.newsvine.com/_tools/seed&save?u=${data.url}`;
-        links.evernote      = `//www.evernote.com/clip.action?url=${data.url}`;
-        links.getpocket     = `//getpocket.com/save?url=${data.url}`;
-        links.flipboard     = `//share.flipboard.com/bookmarklet/popout?v=2&title=${data.title}&url=${data.url}`;
-        links.instapaper    = `//www.instapaper.com/edit?url=${data.url}&title=${data.title}&description=${data.desc}`;
-        links.lineme        = `//lineit.line.me/share/ui?url=${data.url}`;
-        links.skype         = `//web.skype.com/share?url=${data.url}`;
-        links.viber         = `viber://forward?text=${data.url}`;
-        links.whatsapp      = `whatsapp://send?text=${data.url}`;
-        links.telegram      = `//telegram.me/share/url?url=${data.url}&text=${data.title}`;
+        // links.linkedin      = `//linkedin.com/shareArticle?url=${data.url}&title=${data.title}`;
+        // links.buffer        = `//buffer.com/add?text=${data.title}&url=${data.url}`;
+        // links.digg          = `//digg.com/submit?url=${data.url}&title=${data.title}`;
+        // links.reddit        = `//reddit.com/submit?url=${data.url}&title=${data.title}`;
+        // links.stamble       = `//www.stumbleupon.com/submit?url=${data.url}&title=${data.title}`;
+        // links.delicious     = `//delicious.com/save?v=5&provider={provider}&noui&jump=close&url=${data.url}&title=${data.title}`;
+        // links.blogger       = `//www.blogger.com/blog-this.g?u=${data.url}&n=${data.title}&t=${data.desc}`;
+        // links.lj            = `//www.livejournal.com/update.bml?subject=${data.title}&event=${data.url}`;
+        // links.myspace       = `//myspace.com/post?u=${data.url}&t=${data.title}&c=${data.desc}`;
+        // links.yahoo         = `//compose.mail.yahoo.com/?body=${data.url}`;
+        // links.ffeed         = `//friendfeed.com/?url=${data.url}`;
+        // links.newsvine      = `//www.newsvine.com/_tools/seed&save?u=${data.url}`;
+        // links.evernote      = `//www.evernote.com/clip.action?url=${data.url}`;
+        // links.getpocket     = `//getpocket.com/save?url=${data.url}`;
+        // links.flipboard     = `//share.flipboard.com/bookmarklet/popout?v=2&title=${data.title}&url=${data.url}`;
+        // links.instapaper    = `//www.instapaper.com/edit?url=${data.url}&title=${data.title}&description=${data.desc}`;
+        // links.lineme        = `//lineit.line.me/share/ui?url=${data.url}`;
+        // links.skype         = `//web.skype.com/share?url=${data.url}`;
+        // links.viber         = `viber://forward?text=${data.url}`;
+        // links.whatsapp      = `whatsapp://send?text=${data.url}`;
+        // links.telegram      = `//telegram.me/share/url?url=${data.url}&text=${data.title}`;
 
 
         links.target    = `_blank`;
@@ -137,85 +137,85 @@ class SimpleShare {
                     case 'tumblr':
                         window.open(link.tumblr, link.target, link.size );
                         break;
-
-                    case 'linkedin':
-                        window.open(link.linkedin, link.target, link.size );
-                        break;
-
-                    case 'buffer':
-                        window.open(link.buffer, link.target, link.size );
-                        break;
-
-                    case 'digg':
-                        window.open(link.digg, link.target, link.size );
-                        break;
-
-                    case 'reddit':
-                        window.open(link.reddit, link.target, link.size );
-                        break;
-
-                    case 'stamble':
-                        window.open(link.stamble, link.target, link.size );
-                        break;
-
-                    case 'delicious':
-                        window.open(link.delicious, link.target, link.size );
-                        break;
-
-                    case 'blogger':
-                        window.open(link.blogger, link.target, link.size );
-                        break;
-
-                    case 'livejournal':
-                        window.open(link.lj, link.target, link.size );
-                        break;
-
-                    case 'myspace':
-                        window.open(link.myspace, link.target, link.size );
-                        break;
-
-                    case 'yahoo':
-                        window.open(link.yahoo, link.target, link.size );
-                        break;
-
-                    case 'friendfeed':
-                        window.open(link.ffeed, link.target, link.size );
-                        break;
-
-                    case 'newsvine':
-                        window.open(link.newsvine, link.target, link.size );
-                        break;
-                    case 'evernote':
-                        window.open(link.evernote, link.target, link.size );
-                        break;
-
-                    case 'getpocket':
-                        window.open(link.getpocket, link.target, link.size );
-                        break;
-
-                    case 'flipboard':
-                        window.open(link.flipboard, link.target, link.size );
-                        break;
-
-                    case 'instapaper':
-                        window.open(link.instapaper, link.target, link.size );
-                        break;
-
-                    case 'lineme':
-                        window.open(link.lineme, link.target, link.size );
-                        break;
-
-                    case 'skype':
-                        window.open(link.skype, link.target, link.size );
-                        break;
-
-                    case 'whatsapp':
-                        window.open(link.whatsapp, link.target, link.size );
-                        break;
-
-                    case 'telegram':
-                        window.open(link.telegram, link.target, link.size );
-                        break;
+                    //
+                    // case 'linkedin':
+                    //     window.open(link.linkedin, link.target, link.size );
+                    //     break;
+                    //
+                    // case 'buffer':
+                    //     window.open(link.buffer, link.target, link.size );
+                    //     break;
+                    //
+                    // case 'digg':
+                    //     window.open(link.digg, link.target, link.size );
+                    //     break;
+                    //
+                    // case 'reddit':
+                    //     window.open(link.reddit, link.target, link.size );
+                    //     break;
+                    //
+                    // case 'stamble':
+                    //     window.open(link.stamble, link.target, link.size );
+                    //     break;
+                    //
+                    // case 'delicious':
+                    //     window.open(link.delicious, link.target, link.size );
+                    //     break;
+                    //
+                    // case 'blogger':
+                    //     window.open(link.blogger, link.target, link.size );
+                    //     break;
+                    //
+                    // case 'livejournal':
+                    //     window.open(link.lj, link.target, link.size );
+                    //     break;
+                    //
+                    // case 'myspace':
+                    //     window.open(link.myspace, link.target, link.size );
+                    //     break;
+                    //
+                    // case 'yahoo':
+                    //     window.open(link.yahoo, link.target, link.size );
+                    //     break;
+                    //
+                    // case 'friendfeed':
+                    //     window.open(link.ffeed, link.target, link.size );
+                    //     break;
+                    //
+                    // case 'newsvine':
+                    //     window.open(link.newsvine, link.target, link.size );
+                    //     break;
+                    // case 'evernote':
+                    //     window.open(link.evernote, link.target, link.size );
+                    //     break;
+                    //
+                    // case 'getpocket':
+                    //     window.open(link.getpocket, link.target, link.size );
+                    //     break;
+                    //
+                    // case 'flipboard':
+                    //     window.open(link.flipboard, link.target, link.size );
+                    //     break;
+                    //
+                    // case 'instapaper':
+                    //     window.open(link.instapaper, link.target, link.size );
+                    //     break;
+                    //
+                    // case 'lineme':
+                    //     window.open(link.lineme, link.target, link.size );
+                    //     break;
+                    //
+                    // case 'skype':
+                    //     window.open(link.skype, link.target, link.size );
+                    //     break;
+                    //
+                    // case 'whatsapp':
+                    //     window.open(link.whatsapp, link.target, link.size );
+                    //     break;
+                    //
+                    // case 'telegram':
+                    //     window.open(link.telegram, link.target, link.size );
+                    //     break;
 
                     default:
                         console.log('Broken link');
