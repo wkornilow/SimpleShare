@@ -227,9 +227,3 @@ class SimpleShare {
 }
 
 export {SimpleShare};
-
-function ready() {
-    new SimpleShare().init();
-}
-
-document.addEventListener('DOMContentLoaded', ready);
