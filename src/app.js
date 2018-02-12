@@ -1,5 +1,6 @@
 'use strict';
 
+export {SimpleShare}
 
 class SimpleShare {
     constructor() {
@@ -231,5 +232,10 @@ class SimpleShare {
     }
 }
 
-export {SimpleShare}
-exports.SimpleShare = SimpleShare;
+// function ready() {
+//     new SimpleShare().init();
+// }
+//
+// document.addEventListener('DOMContentLoaded', ready);
+
+

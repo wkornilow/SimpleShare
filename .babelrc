@@ -1,0 +1,7 @@
+{
+    "moduleId": "SimpleShare",
+    "presets": ["env", "stage-0"],
+    "plugins": [
+        "add-module-exports"
+    ]
+}
