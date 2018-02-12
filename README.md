@@ -1,37 +1,36 @@
-## Welcome to GitHub Pages
+# SimpleShare
+SimpleShare is a very simple JS library with no dependencies for sharing materials to different social network. 
+***
 
-You can use the [editor on GitHub](https://github.com/wkornilow/SimpleShare/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+## A few simple steps to install library:
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+### 1. Install library via npm
+       npm i -S simpleshare 
+### 2. Import library to you project
+    import {SimpleShare} from 'simpleshare'
+### 3. Add OG (OpenGraph) markup to your pages
+    <meta property="og:title" content="Page title" />
+    <meta property="og:url" content="https://example.com" />
+    <meta property="og:image" content="https://example.com/example.jpg" />
+    <meta property="og:description" content="Description" />
+    <meta property="article:author" content="Author" />
+### 4. Define elements in your template with data-dcp-share attribute
+    <a href="#" data-dcp-share="facebook">Facebook</a>
+##### At the current version plugin supports the following social networks and accepts it like a value for data-dcp-share attribute
+- facebook
+- pinterest
+- twitter
+- googleplus
+- tumblr
 
-### Markdown
+In the following releases a list of social networks will be increased.
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+### 5. Call a plugin after DOM is ready
+    new SocialShare();
 
-```markdown
-Syntax highlighted code block
+## Additional
 
-# Header 1
-## Header 2
-### Header 3
+Also you can define prefered popup window width and height (by default 500px*500px) via data attributes:
 
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/wkornilow/SimpleShare/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+    <a href="#" data-dcp-share="facebook" data-dcp-width="500" data-dcp-height="600">Facebook</a>
+    
