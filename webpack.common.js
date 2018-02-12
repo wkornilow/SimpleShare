@@ -4,6 +4,7 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 module.exports = {
     entry: './src/app.js',
+    target: "node",
     plugins: [
         new HtmlWebpackPlugin({
             title: 'Simple share',
@@ -13,6 +14,8 @@ module.exports = {
     ],
     output: {
         filename: 'sharing.js',
-        path: path.resolve(__dirname, 'dist')
-    },
+        path: path.resolve(__dirname, 'dist'),
+        library: 'SimpleShare',
+        libraryTarget: "umd"
+    }
 };

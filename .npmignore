@@ -1,0 +1,8 @@
+/.idea
+/.git
+/src
+/dist/index.html
+index.html
+webpack.common.js
+webpack.dev.js
+webpack.prod.js

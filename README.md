@@ -17,11 +17,21 @@ SimpleShare is a very simple JS library with no dependencies for sharing materia
 ### 4. Define elements in your template with data-dcp-share attribute
     <a href="#" data-dcp-share="facebook">Facebook</a>
 ##### At the current version plugin supports the following social networks and accepts it like a value for data-dcp-share attribute
-- facebook
-- pinterest
-- twitter
-- googleplus
-- tumblr
+
+| Website       | Transport name|
+| ------------- | ------------- |
+| Facebook      | facebook      |
+| Pinterest     | pinterest     |
+| Twitter       | twitter       |
+| Google Plus   | googleplus    |
+| Tumblr        | tumblr        |
+| LinkedIn      | linkedin      |
+| Reddit        | reddit        |
+| LiveJournal   | livejournal   |
+| Telegram      | telegram      |
+| Buffer        | buffer        |
+| Digg          | digg          |
+| Stamle        | stamble       |
 
 In the following releases a list of social networks will be increased.
 
