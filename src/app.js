@@ -1,8 +1,13 @@
 'use strict';
 
+
 class SimpleShare {
+    constructor() {
+        this.init();
+    }
+
     init() {
-        this.crauler()
+        this.crauler();
     }
 
     encode(string) {
@@ -226,4 +231,5 @@ class SimpleShare {
     }
 }
 
-export {SimpleShare};
+export {SimpleShare}
+exports.SimpleShare = SimpleShare;
