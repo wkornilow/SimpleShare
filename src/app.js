@@ -80,7 +80,7 @@ class SimpleShare {
         links.twitter       = `//twitter.com/intent/tweet?url=${data.url}&text=${data.title}`;
         links.gplus         = `//plus.google.com/share?url=${data.url}`;
         links.tumblr        = `//tumblr.com/widgets/share/tool?canonicalUrl=${data.url}&title=${data.title}&caption=${data.desc}`;
-        // links.linkedin      = `//linkedin.com/shareArticle?url=${data.url}&title=${data.title}`;
+        links.linkedin      = `//linkedin.com/shareArticle?url=${data.url}&title=${data.title}`;
         // links.buffer        = `//buffer.com/add?text=${data.title}&url=${data.url}`;
         // links.digg          = `//digg.com/submit?url=${data.url}&title=${data.title}`;
         // links.reddit        = `//reddit.com/submit?url=${data.url}&title=${data.title}`;
@@ -143,10 +143,10 @@ class SimpleShare {
                     case 'tumblr':
                         window.open(link.tumblr, link.target, link.size );
                         break;
-                    //
-                    // case 'linkedin':
-                    //     window.open(link.linkedin, link.target, link.size );
-                    //     break;
+
+                    case 'linkedin':
+                        window.open(link.linkedin, link.target, link.size );
+                        break;
                     //
                     // case 'buffer':
                     //     window.open(link.buffer, link.target, link.size );
