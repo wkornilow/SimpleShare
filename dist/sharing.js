@@ -167,9 +167,9 @@ class SimpleShare {
         links.reddit        = `https://reddit.com/submit?url=${data.url}&title=${data.title}`;
         links.livejournal   = `https://www.livejournal.com/update.bml?subject=${data.title}&event=${data.url}`;
         links.telegram      = `https://telegram.me/share/url?url=${data.url}&text=${data.title}`;
-        links.buffer        = `//buffer.com/add?text=${data.title}&url=${data.url}`;
-        links.digg          = `//digg.com/submit?url=${data.url}&title=${data.title}`;
-        links.stamble       = `//www.stumbleupon.com/submit?url=${data.url}&title=${data.title}`;
+        links.buffer        = `https://buffer.com/add?text=${data.title}&url=${data.url}`;
+        links.digg          = `https://digg.com/submit?url=${data.url}&title=${data.title}`;
+        links.stamble       = `https://www.stumbleupon.com/submit?url=${data.url}&title=${data.title}`;
 
         // links.delicious     = `//delicious.com/save?v=5&provider={provider}&noui&jump=close&url=${data.url}&title=${data.title}`;
         // links.blogger       = `//www.blogger.com/blog-this.g?u=${data.url}&n=${data.title}&t=${data.desc}`;
