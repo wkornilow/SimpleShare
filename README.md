@@ -36,7 +36,7 @@ SimpleShare is a very simple JS library with no dependencies for sharing materia
 In the following releases a list of social networks will be increased.
 
 ### 5. Call a plugin after DOM is ready
-    new SocialShare();
+    new SimpleShare();
 
 ## Additional
 
