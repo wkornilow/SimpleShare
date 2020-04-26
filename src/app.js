@@ -61,9 +61,9 @@ class SimpleShare {
         let self = this;
 
         data.url    = self.encode(location.href);
-        data.title  = document.head.querySelector('meta[property="og:title"]').content;
-        data.media  = document.head.querySelector('meta[property="og:image"]').content;
-        data.desc   = document.head.querySelector('meta[property="og:description"]').content;
+        data.title  = self.encode(document.head.querySelector('meta[property="og:title"]').content);
+        data.media  = self.encode(document.head.querySelector('meta[property="og:image"]').content);
+        data.desc   = self.encode(document.head.querySelector('meta[property="og:description"]').content);
 
         return data;
     }

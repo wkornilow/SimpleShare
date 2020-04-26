@@ -1,6 +1,6 @@
 {
     "name": "simpleshare",
-    "version": "0.0.5",
+    "version": "0.0.6",
     "description": "Module for simple sharing in social network.",
     "main": "dist/sharing.js",
     "scripts": {
